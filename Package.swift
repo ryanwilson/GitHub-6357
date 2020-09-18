@@ -34,10 +34,10 @@ let package = Package(
     // "DummyFirebase" is another repo that names their package "Firebase".
 
     // First try: use the name specified in the Package manifest. Errors with duplicate names.
-//    .package(name: "Firebase", url: "https://github.com/ryanwilson/DummyFirebasePackage.git", .branch("main")),
+    .package(name: "Firebase", url: "https://github.com/ryanwilson/DummyFirebasePackage.git", .branch("main")),
 
     // Second try: rename like it suggested. Errors with incorrect name.
-    .package(name: "DummyFirebase", url: "https://github.com/ryanwilson/DummyFirebasePackage.git", .branch("main")),
+//    .package(name: "DummyFirebase", url: "https://github.com/ryanwilson/DummyFirebasePackage.git", .branch("main")),
 
     // The legitimate Firebase dependency.
     .package(name: "Firebase", url: "https://github.com/firebase/firebase-ios-sdk.git", .branch("6.33-spm-beta")),
@@ -49,10 +49,10 @@ let package = Package(
         // From the `DummyFirebasePackage` repo.
 
         // First try: Actual name. Fails with duplicate package name.
-//        .product(name: "DummyFirebasePackage", package: "Firebase"),
+        .product(name: "DummyFirebasePackage", package: "Firebase"),
 
         // Second try: renamed. Fails as well.
-        .product(name: "DummyFirebasePackage", package: "DummyFirebase"),
+//        .product(name: "DummyFirebasePackage", package: "DummyFirebase"),
 
         // From the `firebase-ios-sdk` repo.
         .product(name: "FirebaseAuth", package: "Firebase"),
